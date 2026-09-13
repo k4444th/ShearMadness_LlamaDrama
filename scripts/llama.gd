@@ -37,7 +37,6 @@ func setAnimation():
 		animationString += "front"
 	
 	sprite.play(animationString)
-	print(animationString)
 
 func moveSprite():
 	velocity = direction * speed

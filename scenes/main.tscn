@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://r80mygto7gm8"]
 
+[ext_resource type="Script" uid="uid://b8erfjdo2u32b" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://ofgjuw6vf761" path="res://scenes/llama.tscn" id="1_o5qli"]
 
 [node name="Main" type="Node2D" unique_id=727337923]
+script = ExtResource("1_0wfyh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=305592822]
 layer = -1
@@ -17,5 +19,6 @@ color = Color(0.49019608, 0.6431373, 0.1764706, 1)
 
 [node name="Llama" parent="." unique_id=140628552 instance=ExtResource("1_o5qli")]
 
-[node name="Camera" type="Camera2D" parent="." unique_id=1891199678]
+[node name="Camera" type="Camera2D" parent="Llama" unique_id=1891199678]
 zoom = Vector2(10, 10)
+limit_enabled = false

@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://273hogbh6155"]
+
+[ext_resource type="Texture2D" uid="uid://gss2xnvvqvkv" path="res://assets/Spit.png" id="1_aahm3"]
+[ext_resource type="Script" uid="uid://cbwn0jujtor5u" path="res://scripts/spit.gd" id="1_c4fow"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4fow"]
+atlas = ExtResource("1_aahm3")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fhrs"]
+atlas = ExtResource("1_aahm3")
+region = Rect2(37, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03rlv"]
+atlas = ExtResource("1_aahm3")
+region = Rect2(74, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq0kn"]
+atlas = ExtResource("1_aahm3")
+region = Rect2(111, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yca0"]
+atlas = ExtResource("1_aahm3")
+region = Rect2(148, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3acy"]
+atlas = ExtResource("1_aahm3")
+region = Rect2(185, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjnvt"]
+atlas = ExtResource("1_aahm3")
+region = Rect2(222, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ntg34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4fow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fhrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03rlv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq0kn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yca0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3acy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjnvt")
+}],
+"loop": false,
+"name": &"launch",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1fhrs"]
+radius = 5.0
+
+[node name="Spit" type="CharacterBody2D" unique_id=1828263326]
+script = ExtResource("1_c4fow")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2140545595]
+sprite_frames = SubResource("SpriteFrames_ntg34")
+animation = &"launch"
+
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=66235785]
+shape = SubResource("CircleShape2D_1fhrs")
+disabled = true
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1698626036]
+
+[node name="Hitbox" type="CollisionShape2D" parent="DetectionArea" unique_id=1769423734]
+shape = SubResource("CircleShape2D_1fhrs")
